@@ -38,8 +38,8 @@ pip install -r requirements.txt
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
+* To run the program execute:
+
 ```
 python main.py
 ```
