@@ -25,4 +25,8 @@ pip install -r requirements.txt
 python main.py
 ```
 
+## Author
+- **Miguel Angel Ravmos-Valdovinos** - [marv123456](https://github.com/marv123456)
+
+
 ![alt text](https://github.com/marv123456/RetroPlot/blob/main/img/sample.png?raw=true)
