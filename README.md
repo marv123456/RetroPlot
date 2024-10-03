@@ -5,11 +5,11 @@ A python script to extract data from plots.
 ## Table of Contents
 
 - [Description](#description)
-- [Getting Started](#getting started)
+- [Getting Started](#getting)
 - [Author](#author)
 - [Help](#help)
 - [Author](#author)
-- [Version history](#version history)
+- [Version history](#version)
 - [License](#license)
 - [Contributing](#contributing)
 
