@@ -7,11 +7,10 @@ A python script to extract data from plots.
 - [Description](#description)
 - [Getting Started](#getting-started)
 - [Author](#author)
-- [Help](#help)
-- [Author](#author)
 - [Version history](#version-history)
-- [License](#license)
 - [Contributing](#contributing)
+- [License](#license)
+
 
 ## Description
 
@@ -47,11 +46,12 @@ python main.py
 
 ### Usage
 
+Open an image using File>Open menu.
+
+Right click on the image to add an X, Y value or the origin with values ​​(0,0). After adding two values, you can calculate the value of any point on the graph. When the cursor is over the image you can also adjust the selected pixel by moving the arrow keys.
+
 ![alt text](https://github.com/marv123456/RetroPlot/blob/main/img/sample.png?raw=true)
 
-## Help
-
-- Email me to [miguelrvaldovinos@gmail.com](mailto:miguelrvaldovinos@gmail.com)
 
 ## Author
 
@@ -61,7 +61,10 @@ python main.py
 ## Version History
 
 * 0.01
-    * Prototype
+    * Prototype.
+    * Linear regression.
+    * Zoom of image.
+    * Use keys to adjust the selected point.
 
 ## Contributing
 Contributions are welcome! Please submit a pull request or open an issue if you have suggestions or improvements.
