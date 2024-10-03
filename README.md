@@ -6,6 +6,7 @@ This python script generates a graphical interface to extract data from graphs u
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Author](#author)
 - [Features](#features)
 - [Requirements](#requirements)
 - [Contributing](#contributing)
@@ -27,6 +28,9 @@ python main.py
 
 ## Author
 - **Miguel Angel Ravmos-Valdovinos** - [marv123456](https://github.com/marv123456)
+
+## Contributing
+Contributions are welcome! Please submit a pull request or open an issue if you have suggestions or improvements.
 
 
 ![alt text](https://github.com/marv123456/RetroPlot/blob/main/img/sample.png?raw=true)
