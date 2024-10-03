@@ -14,7 +14,7 @@ A python script to extract data from plots.
 
 ## Description
 
-This python script generates a graphical interface to extract data from graphs using calibration curves and linear regressions. It helps users to perform reverse engineering to extrapolate the closest value from the graphed data, using calibration curves. This tool is particularly useful for researchers and engineers who need to retrieve data represented only in graphs and not textually.
+This python script generates a graphical interface to extract data from graphs using calibration curves and linear regressions. It helps users to perform reverse engineering to extrapolate the closest value from the graphed data. This tool is particularly useful for researchers and engineers who need to retrieve data represented only in graphs and not textually.
 
 ## Getting Started
 
@@ -31,14 +31,15 @@ This python script generates a graphical interface to extract data from graphs u
 
 - Download from [here](https://github.com/marv123456/RetroPlot/blob/main/main.py?raw=True)
 - Install requirements:
-```bash
+
+```
 pip install -r requirements.txt
 ```
 
 
 ### Executing program
 
-* To run the program execute:
+* To run the script execute:
 
 ```
 python main.py
@@ -55,7 +56,7 @@ Right click on the image to add an X, Y value or the origin with values ​​(0
 
 ## Author
 
-- **Miguel Angel Ravmos-Valdovinos** - [marv123456](https://github.com/marv123456)
+- **Miguel Angel Ramos-Valdovinos** - [marv123456](https://github.com/marv123456)
 
 
 ## Version History
