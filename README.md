@@ -5,7 +5,7 @@ A python script to extract data from plots.
 ## Table of Contents
 
 - [Description](#description)
-- [Getting Started](#getting)
+- [Getting Started](#getting_started)
 - [Author](#author)
 - [Help](#help)
 - [Author](#author)
