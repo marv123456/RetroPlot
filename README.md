@@ -17,12 +17,12 @@ To install the required dependencies, use the following command:
 
 ```bash
 pip install -r requirements.txt
-
+```
 
 ## Usage
 
-'''bash
+```bash
 python main.py
-
+```
 
 ![alt text](https://github.com/marv123456/RetroPlot/blob/main/img/sample.png?raw=true)
