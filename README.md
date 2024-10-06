@@ -51,7 +51,9 @@ Open an image using File>Open menu.
 
 Right click on the image to add an X, Y value or the origin with values ​​(0,0). After adding two values, you can calculate the value of any point on the graph. When the cursor is over the image you can also adjust the selected pixel by moving the arrow keys.
 
-![alt text](https://github.com/marv123456/RetroPlot/blob/main/img/sample.png?raw=true)
+You can crop the image to fix the view in the plot, just click over image and move the cursor.
+
+![Crop image](https://github.com/marv123456/RetroPlot/blob/main/img/sample0.02.png?raw=True)
 
 
 ## Author
@@ -66,6 +68,8 @@ Right click on the image to add an X, Y value or the origin with values ​​(0
     * Linear regression.
     * Zoom of image.
     * Use keys to adjust the selected point.
+* 0.02
+    * Crop/Restore image
 
 ## Contributing
 Contributions are welcome! Please submit a pull request or open an issue if you have suggestions or improvements.
