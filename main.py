@@ -1,10 +1,12 @@
 import tkinter as tk
 from tkinter import Menu, filedialog, PanedWindow, ttk, Canvas
-from PIL import Image, ImageTk, ImageDraw
+from PIL import Image, ImageTk, ImageDraw, ImageGrab
 import numpy as np
 from scipy import stats
 from sklearn.linear_model import LinearRegression
 import cv2
+from tkinter import messagebox
+import os
 
 # Reset all tables
 def reset():
@@ -153,13 +155,33 @@ def open_image():
         filetypes=[("Image Files", "*.png;*.jpg;*.jpeg;*.bmp;*.gif")]
     )
     if file_path:
-        global img, image_base, img_cv, image_file
-        image_file = Image.open(file_path)
-        image_base = image_file.copy()
-        img = resize_image(image_base)
-        img_cv = np.array(image_file)  # Load the bar plot image
-        img_cv = cv2.cvtColor(img_cv, cv2.COLOR_BGR2RGB)  # Convert BGR to RGB for display
-        show_image()
+        set_image_file(Image.open(file_path))
+        
+
+def open_clipboard():
+    image = ImageGrab.grabclipboard()
+    if isinstance(ImageGrab.grabclipboard(), ImageGrab.Image.Image):
+        set_image_file(image)
+    else:
+        try:
+            if os.path.isfile(image[0]):
+                set_image_file(Image.open(image[0]))
+        except:
+            messagebox.showinfo("Warning", "There is not image in the clipboard.")    
+        
+    
+
+
+def set_image_file(image):
+    global img, image_base, img_cv, image_file
+    image_file = image
+    image_base = image_file.copy()
+    img = resize_image(image_base)
+    img_cv = np.array(image_file)  # Load the bar plot image
+    img_cv = cv2.cvtColor(img_cv, cv2.COLOR_BGR2RGB)  # Convert BGR to RGB for display
+    show_image()
+
+    
 
 # Function to calculate the height of the filled region
 def calculate_height(flood_fill_mask):
@@ -379,11 +401,12 @@ paned_window.add(data_frame)
 image_frame = tk.Frame(paned_window, bg="white", width=600)
 paned_window.add(image_frame)
 
+
 # Menu bar
 menu_bar = Menu(root)
 file_menu = Menu(menu_bar, tearoff=0)
-#file_menu.add_command(label="New")
 file_menu.add_command(label="Open", command=open_image)
+file_menu.add_command(label="Clipboard", command=open_clipboard)
 file_menu.add_separator()
 file_menu.add_command(label="Exit", command=root.quit)
 menu_bar.add_cascade(label="File", menu=file_menu)
