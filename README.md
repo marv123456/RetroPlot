@@ -70,6 +70,8 @@ You can crop the image to fix the view in the plot, just click over image and mo
     * Use keys to adjust the selected point.
 * 0.02
     * Crop/Restore image
+* 0.03
+    * Open image from clipboard
 
 ## Contributing
 Contributions are welcome! Please submit a pull request or open an issue if you have suggestions or improvements.
