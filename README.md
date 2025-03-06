@@ -72,6 +72,10 @@ You can crop the image to fix the view in the plot, just click over image and mo
     * Crop/Restore image
 * 0.03
     * Open image from clipboard
+* 0.04
+    * Shortcut for add point (p)
+    * Shortcut for add x value (x)
+    * Shortcut for add y value(y)
 
 ## Contributing
 Contributions are welcome! Please submit a pull request or open an issue if you have suggestions or improvements.
