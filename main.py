@@ -294,13 +294,23 @@ def delete_selected_item(event = None):
     if table:
         selected_item = table.selection()  # Get selected item
         if selected_item:
+            index = table.index(selected_item)
             table.delete(selected_item)  # Delete the selected item
+            if len(table.get_children()) > index:
+                new_selected_item = table.get_children()[index]
+                table.selection_set(new_selected_item) 
+            else:
+                if len(table.get_children()) > index - 1 and index != 0:
+                    new_selected_item = table.get_children()[index - 1]
+                    table.selection_set(new_selected_item) 
         update_all()
 
 def add_origin():
     global menu_mouse_x, menu_mouse_y
     append_table_xy(xtable, menu_mouse_x, 0)
     append_table_xy(ytable, menu_mouse_y, 0)
+
+
 
 def add_x_value():
     global menu_mouse_x
@@ -313,6 +323,7 @@ def add_x_value():
     def on_cancel(event=None):
         dialog.destroy()
 
+
     dialog = tk.Toplevel(root)
     dialog.title("Add X Value")
     dialog.geometry("300x150")
@@ -324,7 +335,9 @@ def add_x_value():
     label = tk.Label(dialog, text="Value:")
     label.pack(pady=10)
 
+    
     value_entry = tk.Entry(dialog)
+
     value_entry.pack(pady=10)
     value_entry.focus_set()
 
@@ -424,12 +437,28 @@ def on_arrow_key(event):
         update_zoom(menu_mouse_x + 1, menu_mouse_y)
 
 
+def on_p_key(event):
+    if image_base:  # Only proceed if there's an image
+        add_point()  # Call the add_point function
+
+def on_x_key(event):
+    if image_base:  # Only proceed if there's an image
+        add_x_value()  # Call the add_point function
+
+def on_y_key(event):
+    if image_base:  # Only proceed if there's an image
+        add_y_value()  # Call the add_point function
+
 # Bind arrow key events to the label only when mouse is over it
 def bind_keys(event):
     root.bind("<Up>", on_arrow_key)
     root.bind("<Down>", on_arrow_key)
     root.bind("<Left>", on_arrow_key)
     root.bind("<Right>", on_arrow_key)
+    root.bind("y", on_y_key)
+    root.bind("x", on_x_key)
+    root.bind("p", on_p_key)
+
 
 # Unbind the keys when the mouse leaves the label
 def unbind_keys(event):
@@ -437,6 +466,9 @@ def unbind_keys(event):
     root.unbind("<Down>")
     root.unbind("<Left>")
     root.unbind("<Right>")
+    root.unbind("p")
+    root.unbind("x")
+    root.unbind("y")
 
 
 
@@ -517,6 +549,7 @@ def restore(event=None):
     img_cv = cv2.cvtColor(img_cv, cv2.COLOR_BGR2RGB)  # Convert BGR to RGB for display
     canvas.delete(rect)
     show_image()
+    reset()
 
 def crop_restore():
     global rect
@@ -634,9 +667,9 @@ table_context_menu.add_command(label="Plot", command= lambda: plot_table())
 
 # Menu over image
 context_menu = Menu(root, tearoff=0)
-context_menu.add_command(label="Add x value", command=add_x_value)
-context_menu.add_command(label="Add y value", command=add_y_value)
-context_menu.add_command(label="Add point", command=add_point)
+context_menu.add_command(label="Add x value (x)", command=add_x_value)
+context_menu.add_command(label="Add y value (y)", command=add_y_value)
+context_menu.add_command(label="Add point (p)", command=add_point)
 context_menu.add_command(label="Add Origin", command=add_origin)
 context_menu.add_command(label="Select bar", command=flood_fill)
 #context_menu.add_command(label="Crop", command=crop)
